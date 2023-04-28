@@ -1,0 +1,253 @@
+.localAuthority {
+  //    border:  1px solid red;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.localSectionForm {
+  width: 98%;
+  height: 86%;
+  // border:  1px solid rgb(99, 76, 76);
+  text-align: center;
+  position: relative;
+  margin: auto;
+  background-color: rgb(247, 242, 242);
+  border-radius: 20px;
+  top: 37px;
+  
+}
+
+.localTitle {
+  position: relative;
+  left: 10px;
+  color: rgb(116, 113, 113);
+}
+
+mat-form-field {
+  width: 80%;
+}
+
+// -----------------frmNavBar----------------
+
+.formNavBar {
+  width: 98%;
+  height: 50px;
+  background-color: #EBAC21;
+  text-align: center;
+  position: relative;
+  margin: auto;
+  color: white;
+  top: 41px;
+}
+
+.formNavBar p:hover {
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+}
+
+// ----------------------------table--------------------------
+
+.pagination {
+  background-color: rgb(255, 255, 255);
+  width: 98%;
+  height: 56px;
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+.demo-table {
+  width: 100%;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+
+.tableSection {
+  background-color: rgb(255, 255, 255);
+  width: 98%;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+ bottom: 20px;
+  height: 300px;
+}
+
+.mat-elevation-z8 {
+  width: 100%;
+  box-shadow: none;
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 5px;
+}
+
+.delete {
+  color: red;
+  cursor: pointer;
+}
+
+.update {
+  color: green;
+  cursor: pointer;
+}
+
+td,
+th {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.hand :hover {
+  color: green;
+}
+
+.pdf{
+  background-color: #1c1c1c; 
+  font-size: 12px;
+  color: #EBAC21;
+}
+
+
+@media all and (min-width: 1440px) and (max-width: 2560px)   {
+  .selectYear{
+      width: 160px;
+  }
+
+  .selectQuarter{
+    width: 160px;
+}
+
+.selectPlatform{
+  width: 160px;
+  position: relative;
+  right: 10px;
+}
+
+.pdf{
+  // font-size: 9px;
+}
+
+
+
+}
+
+
+@media all and (max-width: 768px)   {
+  .year{
+    font-size: 10px;
+  }
+}
+
+
+@media all and (min-width: 310px) and (max-width: 435px)   {
+  .localTitle{
+    font-size: 12px;
+    padding: 0;
+  }
+
+  .year{
+    position: relative;
+    right: 10px;
+  }
+
+  .quarter{
+    position: relative;
+    top: 23px;
+  }
+
+  .platform{
+    position: relative;
+    top: 49px;
+    left: 10px;
+    z-index: 1;
+  }
+
+  .payment{
+    position: relative;
+    top: 72px;
+    left: 10px;
+  }
+
+  .tableSection{
+    position: relative;
+    top: 150px;
+    overflow-x: scroll;
+    width: 94%;
+    
+  }
+  
+  .th{
+    font-size: 5px;
+  }
+
+  .pdf{
+    position: relative;
+    top: 62px;
+    width: 140px;
+    font-size: 10px;
+    height: 25px;
+    right: 20px;
+    // right: 42px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .handBtn{
+    position: relative;
+    top:34px;
+    left: 80px;
+    margin: auto;
+    text-align: center;
+    width: 30px;
+    font-size: 10px;
+    height: 30px;
+  }
+
+  .pagination{
+    // font-size: 8px;
+    position: relative;
+    top: 158px;
+    height: 65%;
+    width: 366px;
+  }
+
+  .mat-form-field{
+    font-size: 8px;
+  }
+  
+
+}
+
+
+@media all and (min-width: 320px) and (max-width: 375px)   {
+  .pagination{
+    // font-size: 8px;
+    position: relative;
+    top: 158px;
+    height: 65%;
+    width: 318px;
+  }
+}
+
+
+@media all and (max-width: 320px){
+  .pagination{
+    // font-size: 8px;
+    position: relative;
+    top: 158px;
+    height: 65%;
+    width: 262px;
+  }
+}

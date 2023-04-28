@@ -1,0 +1,98 @@
+
+
+<mat-drawer-container autosize style="background-color: transparent;">
+  
+  <mat-drawer #drawer mode="side">
+ 
+
+    <img
+            src="../../../../assets/198-1984339_compass-real-estate-logo-white-hd-png-download.png"
+            style="width: 61%;top: 31px;position: relative;margin: auto;
+            text-align: center;
+            display: flex;"
+
+            (click)="routeToHome()"
+          />
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+         
+           
+          </mat-expansion-panel>
+          <!-- <mat-icon style="position: relative;top: 5px;">{{menu.icon}}</mat-icon>{{menu.name}} -->
+          <button
+            type="button"
+            class="btn btn-secondary SideButton mb-1"
+            routerLink="{{ menu.route }}"
+            *ngFor="let menu of menus"
+          >
+            <div class="row">
+              <div
+                class="col-3"
+                style="position: relative; top: 8px; left: 10px"
+              >
+                <mat-icon>{{ menu.icon }}</mat-icon>
+              </div>
+
+              <div class="col-9" style="position: relative; top: 8px">
+                <p class="d-flex justify-content-start">{{ menu.name }}</p>
+              </div>
+            </div>
+          </button>
+
+          
+          
+            <div class="logOutMainDiv">
+              <p [routerLink]="['/login']" (click)="logoutUser()" 
+              class="logOutWord">
+                <mat-icon class="logOutIcon">power_settings_new</mat-icon>Log Out</p>
+              </div>
+         
+          
+
+
+          <!-- <button type="button" class="btn btn-secondary SideButton mt-1" routerLink="localAuthority/localForm">Result Management</button>
+          <button type="button" class="btn btn-secondary SideButton mt-1" routerLink="localAuthority/updateTable">Result Update</button> -->
+          <!-- <button type="button" class="btn btn-secondary SideButton mt-1" routerLink="divHide">DivHide Management</button>  -->
+          <!-- <button type="button">Result Management</button> -->
+  </mat-drawer>
+  <mat-drawer-content>
+
+    <div class="row userIconSection" style="width: 99%;position: absolute;top: 10px;">
+      
+      <div class="col-6 menuIconDiv" style="z-index: 5;">
+        <button type="button" mat-button (click)="drawer.toggle()">
+          <mat-icon style="align-items: center;">menu</mat-icon>
+        </button>
+
+        <button type="button" mat-button [routerLink]="['/login']" (click)="logoutUser()" class="hideLogoutBtn">
+          <mat-icon style="align-items: center;">power_settings_new</mat-icon>
+        </button>
+      </div>
+
+      <div class="col-6 userNameWord" style="display: flex;justify-content: end;align-items: center;z-index: 5;">
+        <b style="left: 450px;top:6px;"> Hi..!
+          {{ username }}
+        </b>
+            
+
+            <img src="../../../../assets/person.png" class="personImg">
+     
+          </div>
+
+    </div>
+    
+   
+    <img src="../../../../assets/Group 4.png" alt="" style="width: 100%;height: 100%;position: absolute;">
+
+    <router-outlet></router-outlet>
+    
+   
+
+
+  </mat-drawer-content>
+
+
+
+</mat-drawer-container>

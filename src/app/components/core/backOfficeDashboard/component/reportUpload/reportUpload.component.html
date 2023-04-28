@@ -1,0 +1,141 @@
+
+<section class="localAuthority">
+  <div class="formNavBar row">
+    <h1 class="localTitle mt-2 col-8 d-flex justify-content-start" style="color: #1c1c1c">
+       Report Upload Management
+    </h1>
+
+
+    <form>
+      <div class="d-flex justify-content-center">
+        <div class="col-3 localTextField d-flex justify-content-end"
+          style="position: relative; bottom: 44px; left: 15%">
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+  <div class="localSectionForm row-1 mt-2">
+    <!-- <h3 class="localTitle d-flex justify-content-start" style="position: relative; left: 18px; top: 10px">
+     Uploads Report Dashboard
+    </h3> -->
+
+    <!-- -------------first row------------ -->
+    
+
+    <div class="main">
+      <!-- <img src="https://res.cloudinary.com/secure-intelligent-agent/image/upload/v1622205026/job-interview--1298405314-7083a61033a74e2db0fae2923c0978cc_nmlytp.jpg" height="100" width="100"> -->
+      <form class="main-form" [formGroup]="firstFormGroup" >
+       
+        <mat-radio-group class="gen-change-type d-flex justify-content-end" style="position: relative;bottom: 20px;left: 80px;">
+          <div class="gen-change-type__main">
+            <div class="gen-change-type__excel">
+              <mat-radio-button #tMatRadioExcel value="2" (click)="onClickRadioExcel()" checked>Excel</mat-radio-button>
+              <label (click)="tMatRadioExcel.checked = true">
+                <div class="uploadBtn">
+                <i class="temp-upload-icon" for="excel-upload" >click to upload</i>
+                <input type="file" id='excel-upload' accept=".xlsx" multiple="false"
+                  (change)="inputExcelOnClick($event)" />
+                </div>
+              </label>
+            </div>
+
+          </div>
+          <div class="gen-excel-tab" *ngIf="!isEmptyDrop && isExcelDrop">
+            <div class="excel-tab-prev"></div>
+            <!-- floatLabel="never" appearance="none" -->
+            <mat-form-field >
+              <mat-select [(value)]="selectDefault" class="garage-select-color" #tSelectTabHeight
+                (click)="consoleHeight(tSelectTabHeight)" placeholder="Select an Tab" disableOptionCentering disableRipple>
+                <div [ngClass]="{'outer-tofix-perfect-scrollbar': isMaxSelect }">
+                  <mat-option *ngFor="let name of sheetNameForTab; let i = index" [value]="name"
+                    (click)="loadSheetOnTabClick(i)"> {{name}} </mat-option>
+                </div>
+              </mat-select>
+            </mat-form-field>
+            <p class="excel-tab-page"> {{currentPage + 1}} / {{ totalPage }} </p>
+            <div class="excel-tab-next"></div>
+          </div>
+        </mat-radio-group>
+        <div class="gen-drop">
+          <div class="dropzone" *ngIf="isEmptyDrop" appDragDrop (filesChangeEmiter)="dropExcelOnChance($event)"
+          (filesInvalidEmiter)="dropExcelBlock($event)"
+          
+          >
+          <!-- [allowed_extensions]="['xlsx','xls',  'xlsm','xltx','xltm','xlsb','xlam']" -->
+          <div class="text-wrapper">
+            <div class="centered">DRAG & DROP</div>
+            <div class="centered-sub">Excel format is suggested.</div>
+          </div>
+        </div>
+          <div class="display-sheet-js" [hidden]="!(!isEmptyDrop && isExcelDrop)" style="position: relative;top: 40px;">
+            <div class="example-container" style="width: 50%;" >
+              <table cdk-table [dataSource]="excelDataEncodeToJson">
+                <tr cdk-header-row *cdkHeaderRowDef="excelTransformNum; sticky: true"></tr>
+                <tr cdk-row *cdkRowDef="let row ; columns: excelTransformNum;"></tr>
+                <ng-container cdkColumnDef="order" sticky >
+                  <th cdk-header-cell *cdkHeaderCellDef> {{sheetMaxRow}} </th>
+                  <td cdk-cell *cdkCellDef="let element; let idx = index"> {{idx}} </td>
+                </ng-container>
+                <ng-container *ngFor="let disCol of excelTransformNum | slice:1 ;let colIndex = index ;"
+                  cdkColumnDef="{{disCol}}" class="d-flex justify-content-start">
+                  <th cdk-header-cell *cdkHeaderCellDef> {{disCol}} </th>
+                  <td cdk-cell *cdkCellDef="let element"> {{ element[disCol]}} </td>
+                </ng-container>
+              </table>
+            </div>
+          </div>
+          <div class="display-pdf"  [hidden]="!(!isEmptyDrop && !isExcelDrop)" >
+            <pdf-viewer [src]="pdfSrc" [render-text]="true" [original-size]="true" style="position: relative;top: 80px;border: 1px solid red;">
+            </pdf-viewer>
+          </div>
+        </div>
+        <div class="gen-btn" >
+    
+          <!-- <button class="mat-custom-btn">Submit</button> -->
+          <!-- AWS Submit  -->
+          <label class="btn btn-default">
+      <input type="file" (change)="selectFile($event)" >
+    </label>
+          <button class="mat-custom-btn"   style="position: relative;bottom:39px;right: 13px;color: #1c1c1c;background-color: #EBAC21;" (click)="openDialog()">Upload</button>
+          <!-- AWS Submit ends here (click)="upload()"-->
+
+
+          
+        </div>
+      </form>
+    </div>
+
+      
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

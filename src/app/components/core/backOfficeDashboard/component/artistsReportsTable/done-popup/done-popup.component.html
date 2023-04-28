@@ -1,0 +1,11 @@
+<div class="confirm-container p-2">
+  <h1 mat-dialog-title >Payment Status!</h1>
+  <div mat-dialog-content> {{ message }}</div>
+
+  <div mat-dialog-actions style="float:right;margin-top: 10px;" >
+    <button mat-button [hidden]="btnStatus" [mat-dialog-close]="{ clicked: 'Ok'}" style="background-color: #1c1c1c;color: #EBAC21;" [disabled]="btnStatus">Ok</button>
+    <button mat-button [mat-dialog-close]="{ clicked: 'Cancel'}" style="background-color: #EBAC21;color: #1c1c1c;">
+      Cancel
+    </button>
+  </div>
+</div>

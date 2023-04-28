@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-mdc-text-field-wrapper {
+    height: 30px !important;
+    background-color: white;
+}
+ .mat-mdc-form-field-flex {
+    margin-top: -7px !important;
+    
+    
+}
+
+ .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+     top: 14px !important;
+     
+}
+.mat-mdc-form-field-infix{
+    height: 10px;
+    
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    padding-top: 10px;
+    
+}
+
+
+.mat-datepicker-toggle-default-icon{
+    margin-top: -10px;
+}
+
+input:focus-visible {
+    outline-offset: -13px;
+}
+// -------------------
+
+.cdk-overlay-pane{
+    height: auto;
+}
+
+@media all and (min-width: 310px) and (max-width: 425px)   {
+.mat-unthemed{
+    visibility: hidden;
+}
+}

@@ -1,0 +1,50 @@
+<div class="confirm-container p-2" style="overflow-y: hidden;overflow-x: hidden;">
+  <h1 mat-dialog-title [ngStyle]="{'color': color}" style="position: relative;top: 10px;"> {{ message }}<br>
+    </h1>
+  <div mat-dialog-content></div>
+
+  <div class="errorTable" >
+
+    <table
+    mat-table
+    [dataSource]="dataSource"
+    class="mat-elevation-z8 demo-table "
+   p-2>
+    <!-- Position Column -->
+    <ng-container matColumnDef="rowError">
+      <th mat-header-cell *matHeaderCellDef>Row Error</th>
+      <td mat-cell *matCellDef="let element">{{ element.rowError }}</td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="cellError">
+      <th mat-header-cell *matHeaderCellDef>Cell Error</th>
+      <td mat-cell *matCellDef="let element">{{ element.cellError }}</td>
+    </ng-container>
+    
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-row
+      (click)="clickedRows.add(row)"
+      [class.demo-row-is-clicked]="clickedRows.has(row)"
+      *matRowDef="let row; columns: displayedColumns"
+    ></tr>
+  </table>
+  
+  
+
+  </div>
+ 
+
+  <div mat-dialog-actions style="float:right;margin-top: 10px;" >
+    <button mat-button [disabled]="isTableEmpty" [mat-dialog-close]="{ clicked: 'Ok' }" style="background-color: #1c1c1c;color: #EBAC21;">Confirm</button>
+    <button mat-button [mat-dialog-close]="{ clicked: 'Cancel'}" style="background-color: #EBAC21;color: #1c1c1c;">
+      Cancel
+    </button>
+    
+
+  </div>
+
+  
+</div>

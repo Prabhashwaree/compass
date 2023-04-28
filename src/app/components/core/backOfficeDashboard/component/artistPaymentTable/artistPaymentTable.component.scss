@@ -1,0 +1,151 @@
+.localAuthority {
+    //    border:  1px solid red;
+   height: 100%;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .localSectionForm {
+    width: 97%;
+    height: 80%;
+    // border:  1px solid rgb(99, 76, 76);
+    text-align: center;
+    position: relative;
+    margin: auto;
+    background-color: transparent;
+    border-radius: 20px;
+    top: 50px;
+   
+    
+  }
+  
+  .localTitle {
+    position: relative;
+    left: 10px;
+    color: rgb(116, 113, 113);
+  }
+  
+  mat-form-field {
+    width: 80%;
+  }
+  
+  
+  // -----------------frmNavBar----------------
+  
+  .formNavBar {
+    width: 98%;
+    height: 50px;
+    background-color: #EBAC21;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    color: white;
+    top: 60px;
+  }
+  
+  .formNavBar p:hover {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+  }
+  
+  
+  // ----------------------------table--------------------------
+  
+  .pagination {
+    background-color: rgb(255, 255, 255);
+    width: 98%;
+    height: 56px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+  
+  }
+  
+  .demo-table {
+    width: 100%;
+  }
+  
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+  
+  .tableSection {
+    background-color: rgb(255, 255, 255);
+    width: 98%;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+   bottom: 35px;
+   height: 397px;
+    
+  }
+
+  .mat-icon{
+    color: rgb(224, 219, 219);
+  }
+  
+  .mat-elevation-z8 {
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 5px;
+  }
+  
+  .delete {
+    color: red;
+    cursor: pointer;
+  }
+  
+  .update {
+    color: green;
+    cursor: pointer;
+  }
+  
+  td,
+  th {
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+  
+  .hand :hover{
+    color: green;
+  }
+
+  .quterDot{
+    width: 1px;
+    height: 15px;
+    background-color: rgb(224, 228, 225);
+    border-radius: 100%;
+  }
+
+  // .table{
+  //   overflow-y: scroll;
+  //   overflow-x: hidden;
+  // }
+
+  @media all and (min-width: 1440px) and (max-width: 2560px){
+      .quter{
+        position: relative;
+        right: 5%;
+        
+      }
+    }
+
+    @media all and (min-width: 1440px){
+      .quter{
+        position: relative;
+        left: 0.3%;
+        
+      }
+    }

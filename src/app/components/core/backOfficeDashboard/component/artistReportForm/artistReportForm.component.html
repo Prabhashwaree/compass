@@ -1,0 +1,215 @@
+<form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+  <section class="localAuthority">
+    <div class="formNavBar row">
+      <h1
+        class="localTitle mt-2 col-8 d-flex justify-content-start"
+        style="color: #1c1c1c"
+      >
+        Artist Report Form
+      </h1>
+      <form>
+        <div class="d-flex justify-content-center">
+          <div
+            class="col-3 localTextField d-flex justify-content-end"
+            style="position: relative; bottom: 44px; left: 15%"
+          ></div>
+        </div>
+      </form>
+    </div>
+
+    <div class="localSectionForm row-1 mt-2 p-4">
+      <h3
+        class="localTitle d-flex justify-content-start"
+        style="position: relative; left: 18px; top: 10px"
+      >
+        BackOffice Management Dashboard
+      </h3>
+
+      <!-- -------------first row------------ -->
+
+      <div class="row" style="margin-left: 20px; margin-top: 40px">
+        <div ngbDropdown class="d-inline-block col-2 st">
+          <mat-form-field
+            appearance="outline"
+            style="
+              width: 110%;
+              height: 27px;
+              border-radius: 7px;
+              border: 1px solid rgb(247, 242, 242);
+            "
+          >
+            <mat-label>Select Year</mat-label>
+            <mat-select
+              (selectionChange)="onYearComboChangeStatus($event.value)" 
+            >
+              <mat-option *ngFor="let year of allYears" [value]="year.value">{{
+                year.year
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div ngbDropdown class="d-inline-block col-2">
+          <mat-form-field
+            appearance="outline"
+            style="
+              width: 110%;
+              height: 27px;
+              border-radius: 7px;
+              border: 1px solid rgb(247, 242, 242);
+            "
+          >
+            <mat-label>Select Quarter</mat-label>
+            <mat-select
+              (selectionChange)="onQuarterComboChangeStatus($event.value)"
+              
+            >
+              <mat-option [value]="1">1</mat-option>
+              <mat-option [value]="2">2</mat-option>
+              <mat-option [value]="3">3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-2">
+          <mat-form-field
+            class="example-full-width"
+            appearance="outline"
+            style="width: 120%"
+          >
+            <mat-label>Search Vendor No</mat-label>
+            <input
+              type="text"
+              placeholder="Search Vendor No"
+              aria-label="Number"
+              matInput
+              [formControl]="myControl"
+              [matAutocomplete]="auto"
+            />
+            <mat-autocomplete
+              #auto="matAutocomplete"
+              [displayWith]="displayFn"
+              activeOption="activeOption"
+              (optionSelected)="getVendorNo($event.option.value)"
+            >
+              <mat-option
+                *ngFor="let option of filteredOptions | async"
+                [value]="option"
+              >
+                {{ option.name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+
+        <div class="col-2">
+          <mat-form-field
+            appearance="outline"
+            style="width: 100%;margin-left: 25px;"
+          >
+            <mat-label>Payment</mat-label>
+            <input [readonly]="true"  formControlName="payment" matInput />
+            <span matTextPrefix>Rs.&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="row">
+        <div class="col-2">
+          <mat-form-field
+            appearance="outline"
+            style="width: 100%; position: relative; left: 30px"
+          >
+            <mat-label>Invoice ID</mat-label>
+            <input formControlName="invoiceId" matInput />
+          </mat-form-field>
+        </div>
+
+        <div class="col-2 input-group input-group1">
+          <mat-form-field appearance="outline" style="width: 100%;right: 8px;position: relative;">
+            <mat-label>Issue date</mat-label>
+            <input
+              formControlName="issueDate"
+              matInput
+              [matDatepicker]="picker1"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker1"
+            ></mat-datepicker-toggle>
+            <mat-datepicker
+              #picker1
+            ></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="col-2 input-group input-group2">
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Cheque date</mat-label>
+            <input
+              formControlName="chequeDate"
+              matInput
+              [matDatepicker]="picker2"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker2"
+            ></mat-datepicker-toggle>
+            <mat-datepicker
+              (selectedChanged)="chequeDateChange($event)"
+              #picker2
+            ></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="col-2">
+          <!-- <mat-form-field appearance="outline" style="width: 17vw">
+            <mat-label>Start date / End date</mat-label>
+            <mat-date-range-input [rangePicker]="picker3">
+              <input
+                formControlName="startDate"
+                matStartDate
+                placeholder="Start date"
+                (selectedChanged)="startDateChange($event)"
+              />
+              <input
+                formControlName="endDate"
+                matEndDate
+                placeholder="End date"
+              />
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker3"
+            ></mat-datepicker-toggle>
+            <mat-date-range-picker
+              (selectedChanged)="endDateChange($event)"
+              #picker3
+            ></mat-date-range-picker>
+          </mat-form-field> -->
+        </div>
+
+        <div class="col-2 input-group input-group4">
+          <button
+            mat-raised-button
+            
+            style="width: 150px; position: relative; bottom: 3px; left: 98px;color: #1c1c1c;background-color: #EBAC21;"
+            class="bi-calendar3"
+            type="submit"
+          >
+            Add Invoice
+          </button>
+        </div>
+
+        <br />
+
+        <div class="col-2 d-flex justify-content-end py-1"></div>
+      </div>
+    </div>
+  </section>
+</form>

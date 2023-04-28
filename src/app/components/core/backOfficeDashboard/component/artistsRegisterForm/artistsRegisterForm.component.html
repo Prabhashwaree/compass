@@ -1,0 +1,93 @@
+<section class="mainContainer">
+
+  <div class="formNavBar row">
+    <h1
+      class="localTitle mt-2 col-6 d-flex justify-content-start"
+      style="color: #1c1c1c"
+    >
+      Artist Register Management
+    </h1>
+  </div>
+
+  <div class="loginContainer">
+    <div class="LoginTitle">
+      <p style="font-size: 30px;position: relative;top: 29px;color: #1c1c1c">Register</p>
+      <div
+        style="width: 60%;position: relative;border: 1px solid #EBAC21;margin: auto;text-align: center;top: 32px;">
+      </div>
+
+     
+    </div>
+
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div style="font-size: 12px;top: 19px;position: relative;">
+      <mat-form-field appearance="outline" style="width: 250px;position: relative;bottom: 42px;">
+        <mat-label>Vendor Name</mat-label>
+        <input matInput placeholder="Vendor Name" formControlName="venderName" class="form-control">
+        <mat-icon matSuffix style="color: #1c1c1c;position: relative;bottom: 6px;">perm_identity</mat-icon>
+      </mat-form-field>
+      
+    <br>
+
+      <mat-form-field appearance="outline" style="width: 250px;position: relative;bottom: 50px;right:3px ;">
+        <!-- <mat-label>Username</mat-label> -->
+        <input matInput placeholder="Username" formControlName="Username" class="form-control">
+        <mat-icon matSuffix style="color: #1c1c1c;position: relative;bottom: 6px;">account_circle</mat-icon>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="example-full-width" style="width: 250px;position: relative;bottom: 50px;">
+        <!-- <mat-label>Password</mat-label> -->
+        <input  matInput placeholder="Password" formControlName="password" class="form-control">
+        <mat-icon matSuffix style="color: #1c1c1c;position: relative;bottom: 6px;" >https</mat-icon>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="example-full-width" style="width: 250px;position: relative;bottom: 50px;right:3px ;">
+        <mat-label>Email</mat-label>
+        <input  matInput type="email" formControlName="email" class="form-control">
+        <mat-icon matSuffix style="color: #1c1c1c;position: relative;bottom: 6px;" >mail_outline</mat-icon>
+      </mat-form-field>
+     
+      <mat-form-field appearance="outline" style="width: 250px;position: relative;bottom: 50px;">
+        <mat-label>Contact</mat-label>
+        <input matInput placeholder="contact" formControlName="contact" class="form-control">
+        <mat-icon matSuffix style="color: #1c1c1c;position: relative;bottom: 6px;">call</mat-icon>
+      </mat-form-field>
+    
+      <mat-form-field appearance="outline" class="example-full-width" style="width: 250px;position: relative;bottom: 50px;right:3px ;">
+        <mat-label>NIC</mat-label>
+        <input  matInput type="nIC" formControlName="nIC" class="form-control">
+        <mat-icon matSuffix style="color: #1c1c1c;position: relative;bottom: 6px;" >picture_in_picture</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-full-width" style="width: 250px;position: relative;bottom: 50px;">
+        <mat-label>Vendor No</mat-label>
+        <input  matInput type="" formControlName="venderNo" class="form-control">
+        <mat-icon matSuffix style="color: #1c1c1c;position: relative;bottom: 6px;" >assignment</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" style="width: 250px;position: relative;bottom: 50px;right:3px ;">
+        <mat-label>Alternative Name</mat-label>
+        <input matInput placeholder="alternativeName" formControlName="alternativeName" class="form-control">
+        <mat-icon matSuffix style="color: #1c1c1c;position: relative;bottom: 6px;">perm_contact_calendar</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" style="width: 250px;position: relative;bottom: 50px;">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Address" formControlName="address" class="form-control">
+        <mat-icon matSuffix style="color: #1c1c1c;position: relative;bottom: 6px;">room</mat-icon>
+      </mat-form-field>
+
+      
+   
+
+      <button mat-button color="primary" class="btnLogin">CREATE ACCOUNT</button>
+      
+      <!-- (click)="onLogin()" -->
+    </div>
+  </form>
+
+  </div>
+</section>

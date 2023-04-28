@@ -1,0 +1,162 @@
+.localAuthority {
+    //    border:  1px solid red;
+   height: 100%;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .localSectionForm {
+    width: 98%;
+    height: 80%;
+    // border:  1px solid rgb(99, 76, 76);
+    text-align: center;
+    position: relative;
+    margin: auto;
+    background-color: rgb(247, 242, 242);
+    border-radius: 20px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    top: 60px;
+    
+  }
+  
+  .localTitle {
+    position: relative;
+    left: 10px;
+    color: rgb(255, 255, 255);
+  }
+  
+  mat-form-field {
+    width: 80%;
+  }
+  
+  
+  // -----------------frmNavBar----------------
+  
+  .formNavBar {
+    width: 98%;
+    height: 50px;
+    background-color: #ebac21;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    color: white;
+    top: 58px;
+  }
+  
+  .formNavBar p:hover {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+  }
+  
+  
+  // ----------------------------table--------------------------
+  
+  .pagination {
+    background-color: rgb(255, 255, 255);
+    width: 98%;
+    height: 56px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+  
+  }
+  
+  .demo-table {
+    width: 100%;
+  }
+  
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+  
+  .tableSection {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    bottom: 30px; 
+    // overflow-y: hidden;
+    // overflow-x: hidden;
+    overflow: hidden;
+    height: 375px;
+  }
+
+  // .table{
+  //   height: 50vh;
+  // }
+
+
+  .tableScroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height:50vh;
+  }
+  
+  .mat-elevation-z8 {
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+  }
+  
+  .delete {
+    color: red;
+    cursor: pointer;
+  }
+  
+  .update {
+    color: green;
+    cursor: pointer;
+  }
+  
+  td,
+  th {
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+  
+  .hand :hover{
+    color: green;
+  }
+
+  .artistReportFormRoutTopic{
+    color: #1c1c1c;
+    top:9px;
+    position: relative;
+    right: 40px;
+  }
+
+  .artistReportFormRoutTopic :hover{
+    color: #3f3c3c;
+  }
+
+
+  .quarterCombo{
+    position: relative;
+    bottom: 76px;
+    left:100%;
+  }
+
+  @media all and (min-width: 768px) and (max-width: 1024px)   {
+    // .quarterCombo{
+    //   position: relative;
+    //   right: 50px;
+    // }
+.searchIcon{
+  visibility: hidden;
+}
+   
+  }
+  
+    

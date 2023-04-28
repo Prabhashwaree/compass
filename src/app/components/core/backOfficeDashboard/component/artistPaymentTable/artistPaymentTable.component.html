@@ -1,0 +1,104 @@
+<section class="localAuthority">
+
+  <div class="formNavBar row">
+    <h1 class="localTitle mt-2 col-8 d-flex justify-content-start" style="color: #1c1c1c;">Artist Payment
+    </h1>
+
+  </div>
+
+
+  <div class="localSectionForm row-1 mt-2">
+
+
+    <div class="row  d-flex justify-content-start" style="height: 100px;position: relative;top: 12px;" >
+
+      <div class="col-3 ">
+        <!-- <input type="text" class="form-control col-3" placeholder="Search Vendor No / Vendor Name" aria-label="Dollar amount (with dot and two decimal places)" 
+        style="width:140%;"><mat-icon style="position: relative;bottom: 31px;left: 180px;color:rgb(182, 173, 173);">search</mat-icon> -->
+      
+        <mat-form-field appearance="outline" style="width:140%;">
+          <!-- <mat-label>Outline form field</mat-label> -->
+          <input  [(ngModel)]="search"
+          (keyup)="searchByKeyword()" matInput placeholder="Search Vendor No / Vendor Name">
+          <mat-icon matSuffix style="margin-bottom: 10px;color: #1c1c1c;">search</mat-icon>
+        </mat-form-field> 
+      </div>
+    </div>
+
+    
+   
+<div class="row" style="position: relative;bottom: 45px;">
+  <div class="col-3"><b>Vendor Name</b></div>
+
+  <div class="col-3"><b>Vendor No</b></div>
+
+  <div class="col-5"><b>Year/Quarter</b></div>
+
+</div>
+
+
+    <!-- ---------------------------------table------------------- -->
+    <div class="row">
+
+      <div class="tableSection p-0">
+        <mat-accordion multi="true" *ngFor="let vendor of allPayment">
+         
+          <mat-expansion-panel >            
+                               
+            <mat-expansion-panel-header >
+
+              <mat-panel-title style="position: relative;left: 29px">
+              {{vendor.venderName}}
+              </mat-panel-title>
+
+              <mat-panel-title style="position: relative;left: 29px">
+              {{vendor.venderNo}}
+              </mat-panel-title>
+              <mat-panel-title style="position: relative;left: 27px">
+               
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+
+
+            <div class="row d-flex justify-content-end" >
+
+                <div class="col-8" >
+                  <mat-list class="row" 
+                  
+                   >
+                   <!-- style="position:relative ;left: 308px;bottom: 28px;" -->
+                   
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                    
+                    <div class="col-3 quter" *ngFor="let payment of vendor.dataListResDTOs"  style="position:relative;bottom: 30px;margin-left: 46.5%;">
+                      <mat-list-item>{{payment.year}}/{{payment.quarter}}<mat-icon [style.color]="changeColor(payment.status)">{{changeIcon(payment.status)}}</mat-icon></mat-list-item>
+                    </div>
+                    
+                  </mat-list>
+
+                </div>
+
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+
+
+        <!-- -------------------------pagination--------------- -->
+        <mat-paginator
+        [length]="length"
+        [pageIndex]="pageIndex"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[10, 30, 50]"
+        (page)="getServerData($event)"
+      >
+      </mat-paginator>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

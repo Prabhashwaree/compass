@@ -1,0 +1,179 @@
+.layout-container {
+    width: 100vw;
+    // height: 100vh;
+    background-color: transparent;
+  }
+  .top-bar {
+    background-color: #EBAC21;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  .buttonsNav {
+    width: 100px;
+    color: white;
+  }  
+  mat-drawer-container {
+    height: 100%;
+    // border: 1px solid red;
+    // background-image: url(../../../../assets/map.png);
+    // background-size: cover;
+  }
+  
+  mat-drawer {
+    width: 250px;
+    background-color: #1c1c1c;
+    border: 1px solid white;
+    
+    // box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  
+  mat-expansion-panel {
+    background-color: transparent;
+    margin-bottom: 5px;
+    font-size: 20px;
+    padding-left: 20px;
+  }
+  
+  a{
+      text-decoration: none;
+      color:white;
+  }
+  
+  mat-panel-title {
+    color: white;
+    font-weight: 500;
+    width: 150px;
+  }
+  
+  mat-expansion-panel:hover {
+    background-color: #b4b4bb;
+  }
+  
+  .sub-menu-btn{
+    width: 200px;
+    margin-right: 50px;
+  }
+
+
+
+  // ---------------------sidebar-----------------
+
+  .SideButton{
+    width: 100%;
+    background-color: #1c1c1c;
+    border: 1px solid #1c1c1c;
+    position: relative;
+    top: 30px;
+    
+  }
+  .SideButton:hover{
+    background-color: #ffffff;
+    color: #1c1c1c; 
+  }
+
+
+  .logOutWord{
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+  }
+
+ 
+  .logOutIcon{
+    margin-right: 18px;
+  }
+
+
+  .logOutMainDiv{
+   position: relative;
+   width: 50%;
+   height: 30px;
+   top: 191px;
+   color: white;
+  left: 28px;
+  cursor: pointer;
+  }
+
+  .logOutMainDiv:hover{
+    color: #EBAC21;
+  }
+
+  .personImg{
+    left: 460px;
+    top: 7px;
+    width: 42px;
+    color: #1c1c1c;
+  }
+
+  .hideLogoutBtn{
+    visibility: hidden;
+  }
+
+  @media all and (min-width: 310px) and (max-width: 375px)   {
+    // .personImg{
+    //  position: absolute;
+    //  flex-direction: column-reverse;
+    // }
+
+    .userIconSection{
+      flex-direction: row-reverse;
+    }
+
+    .userNameWord{
+      flex-direction: row-reverse;
+    }
+
+    .logOutMainDiv{
+      position: absolute;
+      left: 200px;
+      z-index: 5;
+      visibility: visible;
+
+    }
+    .menuIconDiv{
+      display: flex;
+      justify-content: end;
+    }
+
+    .hideLogoutBtn{
+      visibility: visible;
+    }
+
+    .personImg{
+      width: 35px;
+    }
+    
+    
+    }
+
+
+
+    @media all and (min-width: 375px) and (max-width: 425px)   {
+      .userIconSection{
+        flex-direction: row-reverse;
+      }
+  
+      .userNameWord{
+        flex-direction: row-reverse;
+      }
+  
+      .logOutMainDiv{
+        position: absolute;
+        left: 200px;
+        z-index: 5;
+        visibility: visible;
+  
+      }
+      .menuIconDiv{
+        display: flex;
+        justify-content: end;
+      }
+  
+      .hideLogoutBtn{
+        visibility: visible;
+      }
+  
+      .personImg{
+        width: 35px;
+      }
+    }
+    

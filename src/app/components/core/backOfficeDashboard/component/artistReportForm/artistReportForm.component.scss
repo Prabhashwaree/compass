@@ -1,0 +1,96 @@
+.localAuthority{
+    //    border:  1px solid red;
+       height: 100%;
+       background-color: rgb(255, 255, 255);
+    }
+    
+    .localSectionForm{
+        width: 98%;
+        //height: 90%;
+        // border:  1px solid rgb(99, 76, 76);
+        text-align: center;
+        position: relative;
+        margin: auto;
+        background-color: rgb(247, 242, 242);
+        border-radius: 20px;
+        top: 60px;
+    }
+    .localTitle{
+        position: relative;
+        left: 10px;
+        color: #1c1c1c ;
+    }
+    mat-form-field{
+        width: 80%;
+    }
+    
+
+   
+    
+    // -----------------frmNavBar----------------
+    
+    .formNavBar{
+        width: 98%;
+        height: 50px;
+        background-color: #EBAC21;
+        text-align: center;
+        position: relative;
+        margin: auto;
+        color: white;
+        top: 60px;
+        
+    }
+    .formNavBar p:hover{
+        cursor: pointer;
+        color: rgb(19, 197, 93);
+        // font-weight: 500;
+    }
+
+
+// ------------------new TextField--------------
+
+input{
+  font-size: 14px;
+}
+
+th{
+  text-align: center;
+}
+  
+td{
+  text-align: center;
+}
+
+mat-grid-tile {
+  background: lightblue;
+  
+}
+
+.input-group{
+    width: 19%;
+    height: 10px;
+}
+
+.input-group1{  
+    position: relative;
+    left: 28px;
+}
+
+.input-group2{
+    position: relative;
+    left: 10px;
+}
+
+.input-group3{
+    position: relative;
+    right: 10px;
+}
+
+.input-group4{
+    position: relative;
+    right: 29px;
+}
+
+.option{
+    color: rgb(187, 184, 184);
+}
